@@ -1,35 +1,13 @@
-# #q5.
-# def file_in(input_name, output_file):
-#     def decorator(funk):
-#         def warepped(data):
-#     with open(input_name, 'w+') as f :
-#      f.write(str(data))            
-#      result = funk(data)
-#     with open(output_file, 'w+') as f:
-#        f.write(str(result))
-#        return result
-#     return warepped
-#     return 
-# @file_in(inout_file = 'input.txt', output_file= 'output,txt')
-# def procsses_data(data):
-#    return data
+#Q.5
 
 
-def file_in(input_name, output_file):
- def decorator(funk):
-  def warepped(data):
-   with open(input_name, 'w+') as f:
-    f.write(str(data))            
-   result = funk(data)
-   with open(output_file, 'w+') as f:
-    f.write(str(result))
-   return result
-  return warepped
- return decorator
+def count_mismatches(str1, str2):
+    count = 0
+    for i in range(len(str1)):
+        if str1[i] != str2[i]:
+            count += 1
+    return count
 
-@file_in(input_name='input.txt', output_file='output.txt')
-def procsses_data(data):
- return data
-
-
-       
+str1 = "aBcD"
+str2 = "ABcd"
+print(count_mismatches(str1, str2))      
