@@ -1,13 +1,20 @@
 #Q.5
 
+def file_io(input_file='input.txt', output_file='output.txt'):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            with open(input_file, 'r') as f:
+                data = f.read().strip()
+                  result = func(data, *args, **kwargs)
+                  with open(output_file, 'w+') as f:
+                f.write(str(result))
+            return result
+        return wrapper
+    return decorator
+@file_io(input_file='input.txt', output_file='output.txt')
+def process_data(data):
+    return data.upper()
+        return data.upper()
 
-def count_mismatches(str1, str2):
-    count = 0
-    for i in range(len(str1)):
-        if str1[i] != str2[i]:
-            count += 1
-    return count
+    process_data()
 
-str1 = "aBcD"
-str2 = "ABcd"
-print(count_mismatches(str1, str2))      
