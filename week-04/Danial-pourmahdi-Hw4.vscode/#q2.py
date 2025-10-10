@@ -29,14 +29,14 @@ def print_length(func):
     def wrapper(*args, **kwargs):
         print("print_length")
         for arg in args:
-            print(f": {len(str(arg))}")
+         print(f": {len(str(arg))}")
         return func(*args, **kwargs)
     return wrapper
 
 @to_string
 @print_length
 def exp_func(a, b, c="Hi"):
-    print(f"result: {a}, {b}, {c}")
+   print(f"result: {a}, {b}, {c}")
 
 exp_func("Hi", "maktab", "python137")
 
